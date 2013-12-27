@@ -7,6 +7,7 @@ var controllers = {
 		$scope.entities  = $scope.sharedData.entities;
 		$scope.selection = $scope.sharedData.selection.group; 
 		
+		
 		//add "selected" node to each entity data object
 		if($scope.entities.length && !$scope.selection.length && !$scope.entities[0].selected){
 			angular.forEach($scope.entities, function addSelectedNode(value, key){

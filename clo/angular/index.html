@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:ng="http://angularjs.org>
+<html xmlns:ng="http://angularjs.org" id="ng-app" data-ng-app="cloApp">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=8">
 		<meta charset="utf-8">
 		
 		<title>CLO App POC</title>
 		<link rel="stylesheet" href="css/core.css" type="text/css" />
+		<!--[if lte IE 8]>
+			<script>
+				document.createElement('ng-include');
+				document.createElement('ng-pluralize');
+				document.createElement('ng-view');
+ 			</script>
+		<![endif]-->
 	</head>
-	<body id="ng-app" data-ng-app="cloApp">
+	<body>
 		<div class="content">
 			<div class="grid-1 header">
 				<img src="img/fitch.jpg" class="grid-1-3 fl-left img-logo" />
@@ -20,7 +27,8 @@
 		
 		<!-- Third Party Libs -->
 			<!--[if lte IE 8]>
-				<script src="js/lib/json2.js"></script>
+				<script src="js/lib/ie8/json2.js"></script>
+				<script src="js/lib/ie8/prototypes.js"></script>
 			<![endif]-->
 			<script src="js/lib/angular.min.js" type="text/javascript"></script>
 			<script src="js/lib/angular.route.min.js" type="text/javascript"></script>
