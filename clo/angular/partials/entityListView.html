@@ -1,0 +1,31 @@
+<input type="text" ng-model="filter.name" placeholder="Search" />
+<table>
+	<tr>
+		<td colspan="2" data-ng-click="predicate='name'; reverse=!reverse">
+				Name
+		</td>
+		<td data-ng-click="predicate='issued'; reverse=!reverse">
+			Issue Date
+		</td>
+		<td data-ng-click="predicate='published'; reverse=!reverse">
+			Published Date
+		</td>
+	</tr>
+	<tr data-ng-repeat="entity in entities | filter:filter.name | orderBy:predicate:reverse">
+		<td>
+			<input type="checkbox" name="selectedEntities"  id="{{entity.id}}" value="{{entity.id}}" data-ng-model="entity.selected"> 
+		</td>
+		<td>
+			<label for="{{entity.id}}">{{entity.name}}</label>
+		</td>
+		<td>
+			{{entity.issued}}
+		</td>
+		<td>
+			{{entity.published}}
+		</td>
+	</tr>
+</table>
+<input type="button" data-ng-click="setSelection()" value="Compare"/>
+
+<!-- <pre>shared.entities <br /> {{sharedData.entities|json}}</pre> -->

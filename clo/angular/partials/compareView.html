@@ -1,0 +1,24 @@
+<uL>
+	<li><a href="#/list">Select Deals</a></li>
+	<li><a href="#/compare_chart">Chart</a></li>
+	<li><a href="#/compare_glossary">Glossary</a></li>
+</uL>
+<table>
+	<tr>
+		<th>Deal</th>
+		<th data-ng-repeat="entity in selectedEntities">{{entity.name}}</th>
+		<th data-ng-repeat="calcs in calcData.titles">{{calcs}}</th>
+	</tr>
+	<tr data-ng-repeat="data in displayData"  ng-class-odd="'odd'" ng-class-even="'even'">
+		<td>{{data.name}}</td>
+		<td data-ng-repeat="colData in data.cols track by $index">{{colData}}</td>
+	</tr>
+</table> 
+
+
+<br />
+<br />
+
+<pre>display data<br />{{displayData|json}}</pre>
+
+<pre>calculation data<br />{{calcData|json}}</pre>
