@@ -1,24 +1,74 @@
-<uL>
-	<li><a href="#/list">Select Deals</a></li>
-	<li><a href="#/compare_chart">Chart</a></li>
-	<li><a href="#/compare_glossary">Glossary</a></li>
-</uL>
-<table>
-	<tr>
-		<th>Deal</th>
-		<th data-ng-repeat="entity in selectedEntities">{{entity.name}}</th>
-		<th data-ng-repeat="calcs in calcData.titles">{{calcs}}</th>
-	</tr>
-	<tr data-ng-repeat="data in displayData"  ng-class-odd="'odd'" ng-class-even="'even'">
-		<td>{{data.name}}</td>
-		<td data-ng-repeat="colData in data.cols track by $index">{{colData}}</td>
-	</tr>
+<div class="subnav m-vert-default">
+	<uL class="ovflw-auto p-reset">
+		<li>
+			<a 
+				rel="nav-link"
+				class="fl-left"
+				href="#/list"
+			>
+				Back
+			</a>
+		</li>
+		<li>
+			<a
+				rel="nav-link"
+				class="fl-left"
+				href="#/compare_chart"
+			>
+				Chart
+			</a>
+		</li>
+		<li>
+			<a
+				rel="nav-link"
+				class="fl-left"
+				href="#/compare_glossary"
+			>
+				Glossary
+			</a>
+		</li>
+	</uL>
+</div>
+
+<table class="grid-1 table-static">
+	<thead>
+		<tr>
+			<th>
+				Deal
+			</th>
+			<th data-ng-repeat="entity in selectedEntities">
+				{{entity.name}}
+			</th>
+			<th data-ng-repeat="calcs in calcData.titles">
+				{{calcs}}
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr 
+			data-ng-repeat="data in displayData"
+			ng-class-odd="'odd'"
+			ng-class-even="'even'"
+		>
+			<td>
+				{{data.name}}
+			</td>
+			<td data-ng-repeat="colData in data.cols track by $index">
+				{{colData}}
+			</td>
+		</tr>
+	</tbody>
 </table> 
 
-
-<br />
-<br />
-
-<pre>display data<br />{{displayData|json}}</pre>
-
-<pre>calculation data<br />{{calcData|json}}</pre>
+<!-- DEBUG - compareView.html -->
+	<div class="debug">
+		<div>
+			<h3>[$scope.displayData]</h3>
+			<pre>{{displayData|json}}</pre>
+		</div>
+		<div>
+			<h3>[$scope.calcData]</h3>
+			<pre>{{calcData|json}}</pre>
+		</div>
+	</div>
+<!-- /DEBUG - compareView.html -->

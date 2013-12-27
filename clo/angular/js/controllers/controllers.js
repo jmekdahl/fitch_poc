@@ -8,7 +8,7 @@ var controllers = {
 		$scope.selection = $scope.sharedData.selection.group; 
 		
 		//add "selected" node to each entity data object
-		if(!$scope.selection.length && !$scope.entities[0].selected){
+		if($scope.entities.length && !$scope.selection.length && !$scope.entities[0].selected){
 			angular.forEach($scope.entities, function addSelectedNode(value, key){
 				value.selected = false;
 			});
@@ -30,8 +30,8 @@ var controllers = {
 		$scope.setSelection = function(){
 			if(!$scope.selection.length || $scope.selection.length <= 1 ){
 				alert("Select at least two deals to compare.");
-			} else if($scope.selection.length >= 5 ){
-				alert("You can select a maximum of ");
+			} else if($scope.selection.length > 5 ){
+				alert("You can select a maximum of 5");
 			} else {
 				sharedService.sharedObject.selection.group = $scope.selection;
 				$location.path( "/compare_chart" );
@@ -118,13 +118,13 @@ var controllers = {
 				for (var i = 0; i < colLength; i++) {
 					average += parseFloat($scope.displayData[mapKey].cols[i]) / colLength || 0;
 				}
-				tempArray.push(average);
+				tempArray.push(parseFloat(average).toFixed(2));
 				
 				//Calculage Min
-				tempArray.push(average * .9123 || 0);
+				tempArray.push(parseFloat(average * .9123).toFixed(2) || 0);
 				
 				//Calculate Max
-				tempArray.push(average * 1.175 || 0);
+				tempArray.push(parseFloat(average * 1.175).toFixed(2) || 0);
 			}
 			angular.forEach(tempArray, function(value,key){
 				$scope.displayData[mapKey].cols.push(value);

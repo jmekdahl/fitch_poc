@@ -61,7 +61,70 @@
 			"2.0",
 			"7/15/25"
 		]
-	}
+	},
+	{
+		id: 56785687,
+		name: "Regatta II Funding L.P./LLC",
+		issued: "23-May-13",
+		published: "26-Aug-13",
+		profile: "Some data about Brookside",
+		glossary:[ 
+			"The sum of the principal balances of all collateral debt obligations.(Brookside)",
+			"Fitch Interpretation",
+			"New Data 7",
+			""
+		],
+		chart: [
+			"Sanktay Advisors",
+			"450",
+			"6/20/13",
+			"4.0",
+			"2.0",
+			"7/15/25"
+		]
+	},
+	{
+		id: 67896798,
+		name: "LCM XIV Limited Partnership/LLC",
+		issued: "23-May-13",
+		published: "26-Aug-13",
+		profile: "Some data about Brookside",
+		glossary:[ 
+			"The sum of the principal balances of all collateral debt obligations.(Brookside)",
+			"Fitch Interpretation",
+			"New Data 10",
+			"Defined as \"target initial par amount.\" An amount equal to $500,000,000."
+		],
+		chart: [
+			"Sanktay Advisors",
+			"710",
+			"6/20/13",
+			"4.0",
+			"2.0",
+			"7/15/25"
+		]
+	},
+	{
+		id: 78097809,
+		name: "KVK CLO2013-1 Ltd.",
+		issued: "23-May-13",
+		published: "26-Aug-13",
+		profile: "Some data about Brookside",
+		glossary:[ 
+			"The sum of the principal balances of all collateral debt obligations.(Brookside)",
+			"Fitch Interpretation",
+			"New Data 32345",
+			""
+		],
+		chart: [
+			"Sanktay Advisors",
+			"710",
+			"6/20/13",
+			"4.0",
+			"2.0",
+			"7/15/25"
+		]
+	},
 ];
  
  var mapObj = {

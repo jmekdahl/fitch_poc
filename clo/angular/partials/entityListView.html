@@ -1,31 +1,62 @@
-<input type="text" ng-model="filter.name" placeholder="Search" />
-<table>
-	<tr>
-		<td colspan="2" data-ng-click="predicate='name'; reverse=!reverse">
-				Name
-		</td>
-		<td data-ng-click="predicate='issued'; reverse=!reverse">
-			Issue Date
-		</td>
-		<td data-ng-click="predicate='published'; reverse=!reverse">
-			Published Date
-		</td>
-	</tr>
-	<tr data-ng-repeat="entity in entities | filter:filter.name | orderBy:predicate:reverse">
-		<td>
-			<input type="checkbox" name="selectedEntities"  id="{{entity.id}}" value="{{entity.id}}" data-ng-model="entity.selected"> 
-		</td>
-		<td>
-			<label for="{{entity.id}}">{{entity.name}}</label>
-		</td>
-		<td>
-			{{entity.issued}}
-		</td>
-		<td>
-			{{entity.published}}
-		</td>
-	</tr>
-</table>
-<input type="button" data-ng-click="setSelection()" value="Compare"/>
+<div class="grid-1" data-ng-show="entities">
+	<input class="grid-1-4 txt-search m-vert-default" type="text" data-ng-model="filter.name" placeholder="Filter" />
+	<table class="grid-1 table-sortable">
+		<thead>
+			<tr>
+				<th colspan="2" data-ng-click="predicate='name'; reverse=!reverse">
+					Name
+				</th>
+				<th data-ng-click="predicate='issued'; reverse=!reverse">
+					Issue Date
+				</th>
+				<th data-ng-click="predicate='published'; reverse=!reverse">
+					Published Date
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr 
+				data-ng-repeat="entity in entities | filter:filter.name | orderBy:predicate:reverse"
+				ng-class-odd="'odd'"
+				ng-class-even="'even'"
+			>
+				<td>
+					<input 
+						type="checkbox"
+						name="selectedEntities"
+						id="{{entity.id}}"
+						value="{{entity.id}}"
+						data-ng-model="entity.selected"
+					/> 
+				</td>
+				<td>
+					<label for="{{entity.id}}">
+						{{entity.name}}
+					</label>
+				</td>
+				<td>
+					{{entity.issued}}
+				</td>
+				<td>
+					{{entity.published}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<input 
+		class="btn-default"
+		type="button"
+		data-ng-click="setSelection()"
+		value="Compare"
+	/>
+</div>
+<p data-ng-hide="entities.length">Found no matching deal abstracts.</p>
 
-<!-- <pre>shared.entities <br /> {{sharedData.entities|json}}</pre> -->
+<!-- DEBUG - entityListView.html -->
+	<div class="debug">
+		<div>
+			<h3>[$scope.sharedData.entities][sharedService.sharedObj.entities]</h3>
+			<pre>{{sharedData.entities|json}}</pre>
+		</div>
+	</div>
+<!-- /DEBUG - entityListView.html -->
