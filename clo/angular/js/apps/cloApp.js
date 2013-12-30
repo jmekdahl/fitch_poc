@@ -10,6 +10,7 @@ var cloApp = angular.module( 'cloApp', ['ngRoute'] );
 			entities: entityObj,
 			dataMap: mapObj,
 			defaultPredicate: "name"
+			//return column == scope.sort.column && 'sort-' + scope.sort.descending;
 		}}
 	});
 

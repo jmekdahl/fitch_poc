@@ -1,24 +1,50 @@
 <div class="grid-1" data-ng-show="entities">
 	<input class="grid-1-4 txt-search m-vert-default" type="text" data-ng-model="filter.name" placeholder="Filter" />
-	<table class="grid-1 table-sortable">
+	<h3
+		class="fl-right m-vert-default"
+		data-ng-show="selection.length"
+		data-ng-class="{err: selection.length > 5}"
+	>
+		Deal Count: {{selection.length}}
+	</h3>
+	<table class="table-sortable">
+		<colgroup>
+			<col style="width: 40px;">
+			<col style="width: auto;">
+			<col style="width: 150px">
+			<col style="width: 150px">
+		</colgroup>
 		<thead>
 			<tr>
 				<th colspan="2" data-ng-click="predicate='name'; reverse=!reverse">
 					Name
+					<span 
+						class="fl-right"
+						data-ng-class="{sort: predicate === 'name', ascending: reverse}"
+					></span>
 				</th>
 				<th data-ng-click="predicate='issued'; reverse=!reverse">
-					Issue Date
+					Issued Date
+					<span 
+						class="fl-right"
+						data-ng-class="{sort: predicate === 'issued', ascending: reverse}"
+					></span>
 				</th>
 				<th data-ng-click="predicate='published'; reverse=!reverse">
 					Published Date
+					<span 
+						class="fl-right"
+						data-ng-class="{sort: predicate === 'published', ascending: reverse}"
+					></span>
 				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr 
 				data-ng-repeat="entity in entities | filter:filter.name | orderBy:predicate:reverse"
-				ng-class-odd="'odd'"
-				ng-class-even="'even'"
+				data-ng-class-odd="'odd'"
+				data-ng-class-even="'even'"
+				data-ng-class="{selected: entity.selected}"
 			>
 				<td>
 					<input 
@@ -44,15 +70,15 @@
 		</tbody>
 	</table>
 	<input 
-		class="btn-default"
+		class="btn-default fl-right m-vert-default"
 		type="button"
 		data-ng-click="setSelection()"
-		value="Compare"
+		value="Compare Deals"
 	/>
 </div>
 <p data-ng-hide="entities.length">Found no matching deal abstracts.</p>
 
-<!-- DEBUG - entityListView.html -->
+<!-- DEBUG - entityListView.html 
 	<div class="debug">
 		<div>
 			<h3>[$scope.selection]</h3>
