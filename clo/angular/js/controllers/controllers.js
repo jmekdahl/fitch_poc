@@ -29,16 +29,17 @@ var controllers = {
 		
 		//validates and sets the current selection in the shared service var
 		$scope.setSelection = function(){
-			if(!$scope.selection.length || $scope.selection.length <= 1 ){
+			if(!$scope.selection.length || $scope.selection.length < sharedService.sharedObject.selection.min ){
 				alert("Select at least two deals to compare.");
-			} else if($scope.selection.length > 5 ){
-				alert("You can select a maximum of 5");
+			} else if($scope.selection.length > sharedService.sharedObject.selection.max ){
+				alert("You can select a maximum of "+ sharedService.sharedObject.selection.max);
 			} else {
 				sharedService.sharedObject.selection.group = $scope.selection;
-				$location.path( "/compare_chart" );
+				$location.path( sharedService.sharedObject.comparison.dflt );
 			}
 		}
 	},
+	
 	
 	entityController: function($scope) {
 		//Simple entity View - Possible removal
@@ -75,6 +76,71 @@ var controllers = {
 			$scope.displayData.push(row);
 		});
 	},
+	
+	
+	compareReplacementsController: function($scope, $location, sharedService) {
+		$scope.sharedData = sharedService.sharedObject;
+		
+		if(!$scope.sharedData.selection.group.length){
+			$location.path( "/list" );
+		}
+		
+		//move selected entity objects into local array for faster iteration
+		$scope.selectedEntities = [];
+		angular.forEach($scope.sharedData.entities, function(entValue, entKey){
+			angular.forEach($scope.sharedData.selection.group, function(selValue, selKey){
+				if(selValue === entValue.id){
+					$scope.selectedEntities.push(entValue);
+				}
+			});
+		});
+		
+		//iterate through selected entities and map to page glossary
+		$scope.displayData = [];
+		angular.forEach($scope.sharedData.dataMap.replacements, function(mapValue, mapKey){
+			var row = { name: $scope.sharedData.dataMap.replacements[mapKey], cols: [] }
+			angular.forEach($scope.selectedEntities, function(entValue, entKey){
+				row.cols.push(entValue.replacements[mapKey]);
+			});
+			$scope.displayData.push(row);
+		});
+	},
+	
+	
+	
+	compareBasicController: function($scope, $location, sharedService) {
+		$scope.sharedData = sharedService.sharedObject;
+		
+		if(!$scope.sharedData.selection.group.length){
+			$location.path( "/list" );
+		}
+		
+		//move selected entity objects into local array for faster iteration
+		$scope.selectedEntities = [];
+		angular.forEach($scope.sharedData.entities, function(entValue, entKey){
+			angular.forEach($scope.sharedData.selection.group, function(selValue, selKey){
+				if(selValue === entValue.id){
+					$scope.selectedEntities.push(entValue);
+				}
+			});
+		});
+		
+		$scope.displayData = [];
+		
+		angular.forEach($scope.selectedEntities, function(entValue, entKey) {
+			
+		});
+		/*iterate through selected entities and map to page glossary
+		$scope.displayData = [];
+		angular.forEach($scope.sharedData.dataMap.priority, function(mapValue, mapKey){
+			var row = { name: $scope.sharedData.dataMap.priority[mapKey], cols: [] }
+			angular.forEach($scope.selectedEntities, function(entValue, entKey){
+				row.cols.push(entValue.priority[mapKey]);
+			});
+			$scope.displayData.push(row);
+		});*/
+	},
+	
 	
 	compareChartController: function($scope, $location, sharedService) {
 		$scope.sharedData = sharedService.sharedObject;

@@ -9,8 +9,11 @@ var cloApp = angular.module( 'cloApp', ['ngRoute'] );
 			},
 			entities: entityObj,
 			dataMap: mapObj,
-			defaultPredicate: "name"
-			//return column == scope.sort.column && 'sort-' + scope.sort.descending;
+			defaultPredicate: "name",
+			comparison:{
+				current: "",
+				dflt:"/compare_chart"
+			}
 		}}
 	});
 
@@ -29,6 +32,16 @@ cloApp.config( function( $routeProvider ){
 	.when('/compare_glossary',
 			{
 				controller: 'compareGlossaryController',
+				templateUrl: 'partials/compareView.html'
+			})
+	.when('/compare_priority',
+			{
+				controller: 'basicCompareController',
+				templateUrl: 'partials/compareView.html'
+			})
+	.when('/compare_replacements',
+			{
+				controller: 'compareReplacementsController',
 				templateUrl: 'partials/compareView.html'
 			})
 	.when('/compare_chart',
