@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			dist: {
-				src: ['js/lib/ie8/json2.js', 'js/lib/ie8/prototypes.js', 'data/entityObj.js', 'js/lib/angular.min.js', 'js/lib/angular.route.min.js', 'js/controllers/controllers.js', 'js/apps/cloApp.js' ],
+				src: ['js/lib/ie8/json2.js', 'js/lib/ie8/prototypes.js', 'data/entityObj.js', 'js/lib/angular.min.js', 'js/lib/angular.route.min.js', 'js/partials/controllers/controllers.js', 'js/partials/apps/cloApp.js' ],
 				dest: 'js/prod/built.js'
 			}
 		},
@@ -24,18 +24,6 @@ module.exports = function(grunt) {
 				}
 			}
 		}
-		/*uglify:{
-			my_target: {
-				options: {
-					mangle: false
-				},
-				files: {
-					'js/prod/core.min.js': ['data/entityObj.js', 'js/apps/cloApp.js', 'js/controllers/controllers.js'],
-					'js/prod/ie8.min.js' : ['js/lib/ie8/json2.js', 'js/lib/ie8/prototypes.js'],
-					'js/prod/libs.min.js': ['js/lib/angular.min.js', 'js/lib/angular.route.min.js']
-				}
-			}
-		}*/
 	});
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');

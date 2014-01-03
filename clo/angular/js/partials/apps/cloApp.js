@@ -10,10 +10,7 @@ var cloApp = angular.module( 'cloApp', ['ngRoute'] );
 			entities: entityObj,
 			dataMap: mapObj,
 			defaultPredicate: "name",
-			comparison:{
-				current: "",
-				dflt:"/compare_chart"
-			}
+			comparison: { dflt: "/compare_chart" }
 		}}
 	});
 
@@ -22,32 +19,32 @@ cloApp.config( function( $routeProvider ){
 	.when('/list',
 			{
 				controller: 'entityListController',
-				templateUrl: 'partials/entityListView.html'
-			})
-	.when('/entity',
-			{
-				controller: 'entityController',
-				templateUrl: 'partials/entityView.html'
+				templateUrl: 'tmpl/partials/entityListView.html'
 			})
 	.when('/compare_glossary',
 			{
-				controller: 'compareGlossaryController',
-				templateUrl: 'partials/compareView.html'
+				controller: 'compareController',
+				templateUrl: 'tmpl/partials/compareView.html',
+				resolve: { compare: function(){ return "glossary"; } }	
 			})
 	.when('/compare_priority',
 			{
 				controller: 'basicCompareController',
-				templateUrl: 'partials/compareView.html'
+				templateUrl: 'tmpl/partials/compareView.html',
+				resolve: {
+					compare: "priority"
+				}
 			})
 	.when('/compare_replacements',
 			{
-				controller: 'compareReplacementsController',
-				templateUrl: 'partials/compareView.html'
+				controller: 'compareController',
+				templateUrl: 'tmpl/partials/compareView.html',
+				resolve: { compare: function(){ return "replacements"; } }
 			})
 	.when('/compare_chart',
 			{
 				controller: 'compareChartController',
-				templateUrl: 'partials/compareView.html'
+				templateUrl: 'tmpl/partials/compareView.html',
 			})
 	.otherwise({redirectTo: '/list'});
 });

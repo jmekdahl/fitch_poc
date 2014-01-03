@@ -41,15 +41,8 @@ var controllers = {
 	},
 	
 	
-	entityController: function($scope) {
-		//Simple entity View - Possible removal
-		$scope.sharedData = sharedService.sharedObject;
-		$scope.entities  = $scope.sharedData.entities;
-	},
-	
-	
-	//TODO - Abstract this so that it can be used for all basic comparisons
-	compareGlossaryController: function($scope, $location, sharedService) {
+	compareController: function($scope, $q, $location, sharedService, compare) {
+		
 		$scope.sharedData = sharedService.sharedObject;
 		
 		if(!$scope.sharedData.selection.group.length){
@@ -68,46 +61,17 @@ var controllers = {
 		
 		//iterate through selected entities and map to page glossary
 		$scope.displayData = [];
-		angular.forEach($scope.sharedData.dataMap.glossary, function(mapValue, mapKey){
-			var row = { name: $scope.sharedData.dataMap.glossary[mapKey], cols: [] }
+		angular.forEach($scope.sharedData.dataMap[compare], function(mapValue, mapKey){
+			var row = { name: $scope.sharedData.dataMap[compare][mapKey], cols: [] }
 			angular.forEach($scope.selectedEntities, function(entValue, entKey){
-				row.cols.push(entValue.glossary[mapKey]);
+				row.cols.push(entValue[compare][mapKey]);
 			});
 			$scope.displayData.push(row);
 		});
 	},
 	
 	
-	compareReplacementsController: function($scope, $location, sharedService) {
-		$scope.sharedData = sharedService.sharedObject;
-		
-		if(!$scope.sharedData.selection.group.length){
-			$location.path( "/list" );
-		}
-		
-		//move selected entity objects into local array for faster iteration
-		$scope.selectedEntities = [];
-		angular.forEach($scope.sharedData.entities, function(entValue, entKey){
-			angular.forEach($scope.sharedData.selection.group, function(selValue, selKey){
-				if(selValue === entValue.id){
-					$scope.selectedEntities.push(entValue);
-				}
-			});
-		});
-		
-		//iterate through selected entities and map to page glossary
-		$scope.displayData = [];
-		angular.forEach($scope.sharedData.dataMap.replacements, function(mapValue, mapKey){
-			var row = { name: $scope.sharedData.dataMap.replacements[mapKey], cols: [] }
-			angular.forEach($scope.selectedEntities, function(entValue, entKey){
-				row.cols.push(entValue.replacements[mapKey]);
-			});
-			$scope.displayData.push(row);
-		});
-	},
-	
-	
-	
+	//This will be needed for compare views without a row name mapping
 	compareBasicController: function($scope, $location, sharedService) {
 		$scope.sharedData = sharedService.sharedObject;
 		
@@ -130,15 +94,6 @@ var controllers = {
 		angular.forEach($scope.selectedEntities, function(entValue, entKey) {
 			
 		});
-		/*iterate through selected entities and map to page glossary
-		$scope.displayData = [];
-		angular.forEach($scope.sharedData.dataMap.priority, function(mapValue, mapKey){
-			var row = { name: $scope.sharedData.dataMap.priority[mapKey], cols: [] }
-			angular.forEach($scope.selectedEntities, function(entValue, entKey){
-				row.cols.push(entValue.priority[mapKey]);
-			});
-			$scope.displayData.push(row);
-		});*/
 	},
 	
 	
