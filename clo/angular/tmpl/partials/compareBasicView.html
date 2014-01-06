@@ -51,14 +51,11 @@
 <table class="grid-1 table-static">
 	<thead>
 		<tr>
-			<th>
-				Deal
-			</th>
 			<th data-ng-repeat="deal in selectedDeals">
 				{{deal.name}}
 			</th>
-			<th data-ng-repeat="calcs in calcData.titles">
-				{{calcs}}
+			<th data-ng-repeat="calculation in calcData.titles">
+				{{calculation}}
 			</th>
 		</tr>
 	</thead>
@@ -68,9 +65,6 @@
 			ng-class-odd="'odd'"
 			ng-class-even="'even'"
 		>
-			<td>
-				{{data.name}}
-			</td>
 			<td data-ng-repeat="colData in data.cols track by $index">
 				{{colData}}
 			</td>
@@ -78,7 +72,7 @@
 	</tbody>
 </table> 
 
-<!-- DEBUG - compareView.html
+<!-- DEBUG - compareView.html 
 	<div class="debug">
 		<div>
 			<h3>[$scope.displayData]</h3>

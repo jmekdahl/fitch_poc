@@ -1,7 +1,7 @@
 <div
 	class="grid-1"
-	data-ng-show="entities"
-	data-ng-switch="( entities | filter:filter.name ).length"
+	data-ng-show="deals"
+	data-ng-switch="( deals | filter:filter.name ).length"
 >
 	<input
 		id="txtFilter"
@@ -47,30 +47,30 @@
 		</thead>
 		<tbody>
 			<tr 
-				data-ng-repeat="entity in entities | filter:filter.name | orderBy:predicate:reverse"
+				data-ng-repeat="deal in deals | filter:filter.name | orderBy:predicate:reverse"
 				data-ng-class-odd="'odd'"
 				data-ng-class-even="'even'"
-				data-ng-class="{selected: entity.selected}"
+				data-ng-class="{selected: deal.selected}"
 			>
 				<td>
 					<input 
 						type="checkbox"
-						name="selectedEntities"
-						id="{{entity.id}}"
-						value="{{entity.id}}"
-						data-ng-model="entity.selected"
+						name="selectedDeals"
+						id="{{deal.id}}"
+						value="{{deal.id}}"
+						data-ng-model="deal.selected"
 					/> 
 				</td>
 				<td>
-					<label for="{{entity.id}}">
-						{{entity.name}}
+					<label for="{{deal.id}}">
+						{{deal.name}}
 					</label>
 				</td>
 				<td>
-					{{entity.issued}}
+					{{deal.issued}}
 				</td>
 				<td>
-					{{entity.published}}
+					{{deal.published}}
 				</td>
 			</tr>
 		</tbody>
@@ -83,7 +83,7 @@
 		data-ng-class="{disabled: ( selection.length > sharedData.selection.max || selection.length < sharedData.selection.min ) }"
 	/>
 </div>
-<p data-ng-hide="entities.length">There was a problem loading deal data.</p>
+<p data-ng-hide="deals.length">There was a problem loading deal data.</p>
 
 <!-- DEBUG - entityListView.html 
 	<div class="debug">
@@ -92,8 +92,8 @@
 			<pre>{{selection|json}}</pre>
 		</div>
 		<div>
-			<h3>[$scope.sharedData.entities][sharedService.sharedObj.entities]</h3>
-			<pre>{{sharedData.entities|json}}</pre>
+			<h3>[$scope.sharedData.deals][sharedService.sharedObj.deals]</h3>
+			<pre>{{sharedData.deals|json}}</pre>
 		</div>
 	</div>
 <!-- /DEBUG - entityListView.html -->
