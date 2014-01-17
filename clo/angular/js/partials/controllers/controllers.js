@@ -23,7 +23,7 @@ var controllers = {
 		//watch the state of the "selected" node on each data object and modify the selection array
 		$scope.$watch( 'deals|filter:{selected:true}', function( nv ){
 			$scope.selection = nv.map( function( deal ){
-				return deal.id;
+				return {id: deal.id, name: deal.name};
 			});
 		}, true);
 		
@@ -37,7 +37,7 @@ var controllers = {
 				sharedService.sharedObject.selection.group = $scope.selection;
 				$location.path( sharedService.sharedObject.comparison.dflt );
 			}
-		}
+		};
 	},
 	
 	
@@ -52,7 +52,7 @@ var controllers = {
 		$scope.selectedDeals = [];
 		angular.forEach($scope.sharedData.deals, function(entValue, entKey){
 			angular.forEach($scope.sharedData.selection.group, function(selValue, selKey){
-				if(selValue === entValue.id){
+				if(selValue.id === entValue.id){
 					$scope.selectedDeals.push(entValue);
 				}
 			});
@@ -99,7 +99,7 @@ var controllers = {
 		$scope.selectedDeals = [];
 		angular.forEach($scope.sharedData.deals, function(dealValue, dealKey){
 			angular.forEach($scope.sharedData.selection.group, function(selValue, selKey){
-				if(selValue === dealValue.id){
+				if(selValue.id === dealValue.id){
 					$scope.selectedDeals.push(dealValue);
 				}
 			});

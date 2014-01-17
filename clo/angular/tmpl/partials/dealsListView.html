@@ -1,16 +1,23 @@
+<div data-ng-include="'tmpl/paritals/infoStatic.html'" class="info-wrapper"></div>
+
 <div
-	class="grid-1"
+	class="grid-1 content-section"
 	data-ng-show="deals"
 	data-ng-switch="( deals | filter:filter.name ).length"
 >
+	<div class="grid-2-3">
+	<h3 class="title-sml fl-left m-vert-default">Available Deals</h3>
+	</div>
+	<div class="grid-1-3">
 	<input
 		id="txtFilter"
-		class="grid-1-4 txt-search m-vert-default"
+		class="fl-right txt-search m-vert-default"
 		type="text" data-ng-model="filter.name"
 		data-ng-focus="filter.name = ''"
-		placeholder="Filter" 
+		placeholder="Filter Deals" 
 	/>
-	<p data-ng-switch-when="0">
+	</div>
+	<p data-ng-switch-when="0" class="alt-tooltip">
 		No deals matching <span class="searchQuery">"{{filter.name}}"</span>.
 	</p>
 	<table class="table-sortable" data-ng-switch-default="">
@@ -75,17 +82,42 @@
 			</tr>
 		</tbody>
 	</table>
-	<input 
-		class="btn-default fl-right m-vert-default"
-		type="button"
-		data-ng-click="setSelection()"
-		value="Compare {{selection.length}} Deals"
-		data-ng-class="{disabled: ( selection.length > sharedData.selection.max || selection.length < sharedData.selection.min ) }"
-	/>
 </div>
 <p data-ng-hide="deals.length">There was a problem loading deal data.</p>
 
-<!-- DEBUG - entityListView.html 
+<div class="content-section">
+	<h3 class="title-sml">Selected Deals</h3>
+	<div data-ng-switch="selection.length">
+		<p data-ng-switch-when="0" class="alt-tooltip">
+			No deals selected.
+		</p>
+		<div data-ng-switch-default="">
+			<div class="grid-2-3 selection">
+				<div
+					class="selected-item" 
+					data-ng-repeat="deal in selection"
+					data-ng-class-odd="'odd'"
+					data-ng-class-even="'even'"
+				>
+					<label for="{{deal.id}}">
+						{{deal.name}}
+					</label>
+				</div>
+			</div>
+			<div class="grid-1-3">
+				<input 
+					class="btn-default fl-right"
+					type="button"
+					data-ng-click="setSelection()"
+					value="Compare {{selection.length}} Deals"
+					data-ng-class="{disabled: ( selection.length > sharedData.selection.max || selection.length < sharedData.selection.min ) }"
+				/>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- DEBUG - entityListView.html
 	<div class="debug">
 		<div>
 			<h3>[$scope.selection]</h3>
