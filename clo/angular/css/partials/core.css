@@ -216,6 +216,9 @@ a[rel="nav-link"]
 	  color:#FFF; display:block; font-weight:bold; padding: 2px 0; 
 	  z-index:10; float:left; text-decoration:none }
 
+a[rel="nav-link"]:active, a[rel="nav-link"].active
+	{ background:#FE2E2E }
+
 a[rel="email"]
 	{ color:#616a74 }
 
@@ -372,6 +375,16 @@ table tr.even, .selection .selected-item.even
 .selection .selected-item:hover
 	{ background: #F6D8CE; color: #8A0808; border:1px 0 1px 0 solid #8A0808; }
 
+.loaderDiv
+	{ display:none; position:fixed; top:0; right:0; bottom:0; left:0;
+	  z-index:1100 }
+
+.ajax-loader
+	{ position:absolute; left:50%; top:8%; margin-left:-110px; display:block; 
+	  background:#FFF; border:1px solid #666; padding:8px 16px; text-align:center;
+	  background:#FBFBEF }
+
+
 /* ==========================================================================
 	Debug Section													(optional)
    ========================================================================== */
@@ -384,4 +397,5 @@ table tr.even, .selection .selected-item.even
 
 .debug pre
 	{ margin:0; background:#444; color:#A9F5A9 }
+
 

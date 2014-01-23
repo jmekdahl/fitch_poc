@@ -577,205 +577,6 @@ if (!('some' in Array.prototype)) {
 		return false;
 	};
 }
- var dealsObj = [
-	{
-		id: 12341234,
-		name: "Anchorage Capital CLO 2013-1, Limited/LLC",
-		issued: "27-Jun-13",
-		published: "8-Aug-13",
-		profile: "Some data about Achorage",
-		glossary:[ 
-			"The sum of the principal balances of all collateral obligations or pledged obligations.(Achorage)",
-			"Fitch Interpretation",
-			"New Data",
-			"Defined as \"target initial par amount.\" An amount equal to $500,000,000."
-		],
-		priority:[ 
-			"1. Taxes, governmental fees, and administrative expenses (subject to a cap of $250,000 p.a. plus 0.02% p.a. of the CPA)",
-			"2. Base management fee (15 bps)",
-			"3. Hedge counterparties",
-			"4. Class A interest",
-			"5. Class B interest",
-			"6. Class A/B coverage tests"
-		],
-		chart: [
-			"GoldenTree Asset Mgmt",
-			"650",
-			"5/2/13",
-			"4.0",
-			"2.0",
-			"4/25/25"
-		], 
-		replacements: [
-			"a) 66 2/3% of the aggregate outstanding amount of the controlling class, and b) 66 2/3% of subordinated notes (excluding notes held by the portfolio manager).",
-			"a) An intentional breach of provisions in the portfolio management agreement (PMA) or indenture by the portfolio manager that are applicable to it. b) A breach in any material respect of any provision in the PMA or indenture that has a material adverse effect on any noteholder and the portfolio manager fails to cure such breach within 30 days of notice. c)  The portfolio manager is wound up or dissolved; or there is appointed over it or a substantial portion of its assets a receiver, administrator, administrative receiver, trustee or similar officer; or it ceases to be able to pay its debts when due and payable, applies for or consents to appointment of a custodian, liquidator or sequestrator; any bankruptcy, reorganization, arrangement, readjustement of debt, insolvency or dissolution; or it permits or suffers all or any substnaital part of its properties or assets to be sequestered or attached by court order. d) The occurrence and continuance of an EoD consisting of a failure to pay principal or interest on the notes and results from any breach of its duties as portfolio manager. e)  An act by the portfolio manager that constitutes fraud or criminal activity in performance of its obligations under the PMA, or the portfolio manager being convicted of a felony offense related to its primary business.", 
-			"Not applicable",
-			"Not applicable",
-			"Within 60 days of the resignation or removal of the manager while the notes are outstanding: (i) a majority of the subordinated notes shall propose a replacent portfolio manager that satisfies the criteria set forth in Section 13(f) by delivering notice to the issuer, portfolio manager and the trustee; (ii) a majority of the controlling class shall have 30 days from receipt of such notice to object to the replacement portfolio manager by notice of such objection to the trustee: (a) if no notice of objection is received by the trustee within 30 days, such proposed replacement portfolio manager shall be appointed by the issuer as successor portfolio manager; (b) if an objection is received, the holders of the controling class and subordinated notes shall be notified; within 30 days of receipt of notice of such objection, either a majority of the subordinated notes or the majority of the controlling class may propose (the class of securities making such propsoal being the \"Proposing Class\") a replacement portfolio manager that satisfies the criteria set forth in Section 13(f).  A majority of the class of noteholders not comprising the Proposing Class shall have 30 days to deliver notice of objection. ; (1) If no notice of objection is received by the Proposing Class, the issuer or the trustee within the 30 days, such proposed replacement portfolio manager shall be appointed by the issuer; (2) If a notice of objection is received within 30 days, then either group of noteholders may again propose a replacement portfolio manager  in accordance with the foregoing but 150 days following the date of resignation or removal of the portfolio manager, (i) the resigning or removed portfolio manager, (ii) a majority of the controlling class or (iii) a majority of the subordinated notes may petition a court of competent jurisidction for the appointment of a replacement portfolio manager, which appointment shall not require the consent of, or be subject to the disapproval of, the issuer or any noteholder so long as such replacement portfolio manager (x) is not a person that was previously objected to and (y) meets the criteria set forth in Section 13(f). The resigned or removed manager will be entitled to receive any base management fees, subordinated management fees and incentive management fees accrued and unpaid as of the effective date of such resignation or removal on each payment date that the fees are paid in accordance to the priority of payments, pro rata with the fees payable to the successor portfolio manager." 
-		]
-	},
-	{
-		id: 23452345,
-		name: "Avery Point II CLO, Limited/Corp.",
-		issued: "20-Jun-13",
-		published: "12-Aug-13",
-		profile: "Some data about Avery Point",
-		glossary:[ 
-			"The sum of the principal balances of all collateral obligations or pledged obligations.(Avery)",
-			"Moody Interpretation",
-			"New Data 1",
-			"An amount equal to $500,000,000."
-		],
-		priority:[ 
-			""
-		],
-		chart: [
-			"Sanktay Advisors",
-			"500",
-			"6/20/13",
-			"4.0",
-			"2.0",
-			"7/15/25"
-		],
-		replacements: []
-	},
-	{
-		id: 43563456,
-		name: "Brookside Mill CLO Ltd./LLC",
-		issued: "23-May-13",
-		published: "26-Aug-13",
-		profile: "Some data about Brookside",
-		glossary:[ 
-			"The sum of the principal balances of all collateral debt obligations.(Brookside)",
-			"Fitch Interpretation",
-			"New Data 3",
-			""
-		],
-		priority:[ 
-					"1. Taxes non-payment"
-				],
-		chart: [
-			"Sanktay Advisors",
-			"500",
-			"6/20/13",
-			"4.0",
-			"2.0",
-			"7/15/25"
-		],
-		replacements: [
-			"a) 66 2/3% of the aggregate outstanding amount of the controlling class, and b) 66 2/3% of subordinated notes (excluding notes held by the portfolio manager).",
-			"a) An intentional breach of provisions in the portfolio management agreement (PMA) or indenture by the portfolio manager that are applicable to it. b) A breach in any material respect of any provision in the PMA or indenture that has a material adverse effect on any noteholder and the portfolio manager fails to cure such breach within 30 days of notice. c)  The portfolio manager is wound up or dissolved; or there is appointed over it or a substantial portion of its assets a receiver, administrator, administrative receiver, trustee or similar officer; or it ceases to be able to pay its debts when due and payable, applies for or consents to appointment of a custodian, liquidator or sequestrator; any bankruptcy, reorganization, arrangement, readjustement of debt, insolvency or dissolution; or it permits or suffers all or any substnaital part of its properties or assets to be sequestered or attached by court order. d) The occurrence and continuance of an EoD consisting of a failure to pay principal or interest on the notes and results from any breach of its duties as portfolio manager. e)  An act by the portfolio manager that constitutes fraud or criminal activity in performance of its obligations under the PMA, or the portfolio manager being convicted of a felony offense related to its primary business.", 
-			"Not applicable",
-			"Not applicable",
-			"Within 60 days of the resignation or removal of the manager while the notes are outstanding: (i) a majority of the subordinated notes shall propose a replacent portfolio manager that satisfies the criteria set forth in Section 13(f) by delivering notice to the issuer, portfolio manager and the trustee; (ii) a majority of the controlling class shall have 30 days from receipt of such notice to object to the replacement portfolio manager by notice of such objection to the trustee: (a) if no notice of objection is received by the trustee within 30 days, such proposed replacement portfolio manager shall be appointed by the issuer as successor portfolio manager; (b) if an objection is received, the holders of the controling class and subordinated notes shall be notified; within 30 days of receipt of notice of such objection, either a majority of the subordinated notes or the majority of the controlling class may propose (the class of securities making such propsoal being the \"Proposing Class\") a replacement portfolio manager that satisfies the criteria set forth in Section 13(f).  A majority of the class of noteholders not comprising the Proposing Class shall have 30 days to deliver notice of objection. ; (1) If no notice of objection is received by the Proposing Class, the issuer or the trustee within the 30 days, such proposed replacement portfolio manager shall be appointed by the issuer; (2) If a notice of objection is received within 30 days, then either group of noteholders may again propose a replacement portfolio manager  in accordance with the foregoing but 150 days following the date of resignation or removal of the portfolio manager, (i) the resigning or removed portfolio manager, (ii) a majority of the controlling class or (iii) a majority of the subordinated notes may petition a court of competent jurisidction for the appointment of a replacement portfolio manager, which appointment shall not require the consent of, or be subject to the disapproval of, the issuer or any noteholder so long as such replacement portfolio manager (x) is not a person that was previously objected to and (y) meets the criteria set forth in Section 13(f). The resigned or removed manager will be entitled to receive any base management fees, subordinated management fees and incentive management fees accrued and unpaid as of the effective date of such resignation or removal on each payment date that the fees are paid in accordance to the priority of payments, pro rata with the fees payable to the successor portfolio manager." 
-		]
-	},
-	{
-		id: 56785687,
-		name: "Regatta II Funding L.P./LLC",
-		issued: "23-May-13",
-		published: "26-Aug-13",
-		profile: "Some data about Brookside",
-		glossary:[ 
-			"The sum of the principal balances of all collateral debt obligations.(Brookside)",
-			"Fitch Interpretation",
-			"New Data 7",
-			""
-		],
-		priority:[ 
-					"1. Taxes non-payment"
-				],
-		chart: [
-			"Sanktay Advisors",
-			"450",
-			"6/20/13",
-			"4.0",
-			"2.0",
-			"7/15/25"
-		],
-		replacements: [
-			"a) 66 2/3% of the aggregate outstanding amount of the controlling class, and b) 66 2/3% of subordinated notes (excluding notes held by the portfolio manager).",
-			"a) An intentional breach of provisions in the portfolio management agreement (PMA) or indenture by the portfolio manager that are applicable to it. b) A breach in any material respect of any provision in the PMA or indenture that has a material adverse effect on any noteholder and the portfolio manager fails to cure such breach within 30 days of notice. c)  The portfolio manager is wound up or dissolved; or there is appointed over it or a substantial portion of its assets a receiver, administrator, administrative receiver, trustee or similar officer; or it ceases to be able to pay its debts when due and payable, applies for or consents to appointment of a custodian, liquidator or sequestrator; any bankruptcy, reorganization, arrangement, readjustement of debt, insolvency or dissolution; or it permits or suffers all or any substnaital part of its properties or assets to be sequestered or attached by court order. d) The occurrence and continuance of an EoD consisting of a failure to pay principal or interest on the notes and results from any breach of its duties as portfolio manager. e)  An act by the portfolio manager that constitutes fraud or criminal activity in performance of its obligations under the PMA, or the portfolio manager being convicted of a felony offense related to its primary business.", 
-			"Not applicable",
-			"Not applicable",
-			"Within 60 days of the resignation or removal of the manager while the notes are outstanding: (i) a majority of the subordinated notes shall propose a replacent portfolio manager that satisfies the criteria set forth in Section 13(f) by delivering notice to the issuer, portfolio manager and the trustee; (ii) a majority of the controlling class shall have 30 days from receipt of such notice to object to the replacement portfolio manager by notice of such objection to the trustee: (a) if no notice of objection is received by the trustee within 30 days, such proposed replacement portfolio manager shall be appointed by the issuer as successor portfolio manager; (b) if an objection is received, the holders of the controling class and subordinated notes shall be notified; within 30 days of receipt of notice of such objection, either a majority of the subordinated notes or the majority of the controlling class may propose (the class of securities making such propsoal being the \"Proposing Class\") a replacement portfolio manager that satisfies the criteria set forth in Section 13(f).  A majority of the class of noteholders not comprising the Proposing Class shall have 30 days to deliver notice of objection. ; (1) If no notice of objection is received by the Proposing Class, the issuer or the trustee within the 30 days, such proposed replacement portfolio manager shall be appointed by the issuer; (2) If a notice of objection is received within 30 days, then either group of noteholders may again propose a replacement portfolio manager  in accordance with the foregoing but 150 days following the date of resignation or removal of the portfolio manager, (i) the resigning or removed portfolio manager, (ii) a majority of the controlling class or (iii) a majority of the subordinated notes may petition a court of competent jurisidction for the appointment of a replacement portfolio manager, which appointment shall not require the consent of, or be subject to the disapproval of, the issuer or any noteholder so long as such replacement portfolio manager (x) is not a person that was previously objected to and (y) meets the criteria set forth in Section 13(f). The resigned or removed manager will be entitled to receive any base management fees, subordinated management fees and incentive management fees accrued and unpaid as of the effective date of such resignation or removal on each payment date that the fees are paid in accordance to the priority of payments, pro rata with the fees payable to the successor portfolio manager." 
-		]
-	},
-	{
-		id: 67896798,
-		name: "LCM XIV Limited Partnership/LLC",
-		issued: "23-May-13",
-		published: "26-Aug-13",
-		profile: "Some data about Brookside",
-		glossary:[ 
-			"The sum of the principal balances of all collateral debt obligations.(Brookside)",
-			"Fitch Interpretation",
-			"New Data 10",
-			"Defined as \"target initial par amount.\" An amount equal to $500,000,000."
-		],
-		priority:[ 
-					"1. Taxes non-payment"
-				],
-		chart: [
-			"Sanktay Advisors",
-			"710",
-			"6/20/13",
-			"4.0",
-			"2.0",
-			"7/15/25"
-		],
-		replacements: [
-			"a) 66 2/3% of the aggregate outstanding amount of the controlling class, and b) 66 2/3% of subordinated notes (excluding notes held by the portfolio manager).",
-			"a) An intentional breach of provisions in the portfolio management agreement (PMA) or indenture by the portfolio manager that are applicable to it. b) A breach in any material respect of any provision in the PMA or indenture that has a material adverse effect on any noteholder and the portfolio manager fails to cure such breach within 30 days of notice. c)  The portfolio manager is wound up or dissolved; or there is appointed over it or a substantial portion of its assets a receiver, administrator, administrative receiver, trustee or similar officer; or it ceases to be able to pay its debts when due and payable, applies for or consents to appointment of a custodian, liquidator or sequestrator; any bankruptcy, reorganization, arrangement, readjustement of debt, insolvency or dissolution; or it permits or suffers all or any substnaital part of its properties or assets to be sequestered or attached by court order. d) The occurrence and continuance of an EoD consisting of a failure to pay principal or interest on the notes and results from any breach of its duties as portfolio manager. e)  An act by the portfolio manager that constitutes fraud or criminal activity in performance of its obligations under the PMA, or the portfolio manager being convicted of a felony offense related to its primary business.", 
-			"Not applicable",
-			"Not applicable",
-			"Within 60 days of the resignation or removal of the manager while the notes are outstanding: (i) a majority of the subordinated notes shall propose a replacent portfolio manager that satisfies the criteria set forth in Section 13(f) by delivering notice to the issuer, portfolio manager and the trustee; (ii) a majority of the controlling class shall have 30 days from receipt of such notice to object to the replacement portfolio manager by notice of such objection to the trustee: (a) if no notice of objection is received by the trustee within 30 days, such proposed replacement portfolio manager shall be appointed by the issuer as successor portfolio manager; (b) if an objection is received, the holders of the controling class and subordinated notes shall be notified; within 30 days of receipt of notice of such objection, either a majority of the subordinated notes or the majority of the controlling class may propose (the class of securities making such propsoal being the \"Proposing Class\") a replacement portfolio manager that satisfies the criteria set forth in Section 13(f).  A majority of the class of noteholders not comprising the Proposing Class shall have 30 days to deliver notice of objection. ; (1) If no notice of objection is received by the Proposing Class, the issuer or the trustee within the 30 days, such proposed replacement portfolio manager shall be appointed by the issuer; (2) If a notice of objection is received within 30 days, then either group of noteholders may again propose a replacement portfolio manager  in accordance with the foregoing but 150 days following the date of resignation or removal of the portfolio manager, (i) the resigning or removed portfolio manager, (ii) a majority of the controlling class or (iii) a majority of the subordinated notes may petition a court of competent jurisidction for the appointment of a replacement portfolio manager, which appointment shall not require the consent of, or be subject to the disapproval of, the issuer or any noteholder so long as such replacement portfolio manager (x) is not a person that was previously objected to and (y) meets the criteria set forth in Section 13(f). The resigned or removed manager will be entitled to receive any base management fees, subordinated management fees and incentive management fees accrued and unpaid as of the effective date of such resignation or removal on each payment date that the fees are paid in accordance to the priority of payments, pro rata with the fees payable to the successor portfolio manager." 
-		]
-	},
-	{
-		id: 78097809,
-		name: "KVK CLO2013-1 Ltd.",
-		issued: "23-May-13",
-		published: "26-Aug-13",
-		profile: "Some data about Brookside",
-		glossary:[ 
-			"The sum of the principal balances of all collateral debt obligations.(Brookside)",
-			"Fitch Interpretation",
-			"New Data 32345",
-			""
-		],
-		priority:[ 
-					"1. Taxes non-payment"
-				],
-		chart: [
-			"Sanktay Advisors",
-			"710",
-			"6/20/13",
-			"4.0",
-			"2.0",
-			"7/15/25"
-		],
-		replacements: [
-			"a) 66 2/3% of the aggregate outstanding amount of the controlling class, and b) 66 2/3% of subordinated notes (excluding notes held by the portfolio manager).",
-			"a) An intentional breach of provisions in the portfolio management agreement (PMA) or indenture by the portfolio manager that are applicable to it. b) A breach in any material respect of any provision in the PMA or indenture that has a material adverse effect on any noteholder and the portfolio manager fails to cure such breach within 30 days of notice. c)  The portfolio manager is wound up or dissolved; or there is appointed over it or a substantial portion of its assets a receiver, administrator, administrative receiver, trustee or similar officer; or it ceases to be able to pay its debts when due and payable, applies for or consents to appointment of a custodian, liquidator or sequestrator; any bankruptcy, reorganization, arrangement, readjustement of debt, insolvency or dissolution; or it permits or suffers all or any substnaital part of its properties or assets to be sequestered or attached by court order. d) The occurrence and continuance of an EoD consisting of a failure to pay principal or interest on the notes and results from any breach of its duties as portfolio manager. e)  An act by the portfolio manager that constitutes fraud or criminal activity in performance of its obligations under the PMA, or the portfolio manager being convicted of a felony offense related to its primary business.", 
-			"Not applicable",
-			"Not applicable",
-			"Within 60 days of the resignation or removal of the manager while the notes are outstanding: (i) a majority of the subordinated notes shall propose a replacent portfolio manager that satisfies the criteria set forth in Section 13(f) by delivering notice to the issuer, portfolio manager and the trustee; (ii) a majority of the controlling class shall have 30 days from receipt of such notice to object to the replacement portfolio manager by notice of such objection to the trustee: (a) if no notice of objection is received by the trustee within 30 days, such proposed replacement portfolio manager shall be appointed by the issuer as successor portfolio manager; (b) if an objection is received, the holders of the controling class and subordinated notes shall be notified; within 30 days of receipt of notice of such objection, either a majority of the subordinated notes or the majority of the controlling class may propose (the class of securities making such propsoal being the \"Proposing Class\") a replacement portfolio manager that satisfies the criteria set forth in Section 13(f).  A majority of the class of noteholders not comprising the Proposing Class shall have 30 days to deliver notice of objection. ; (1) If no notice of objection is received by the Proposing Class, the issuer or the trustee within the 30 days, such proposed replacement portfolio manager shall be appointed by the issuer; (2) If a notice of objection is received within 30 days, then either group of noteholders may again propose a replacement portfolio manager  in accordance with the foregoing but 150 days following the date of resignation or removal of the portfolio manager, (i) the resigning or removed portfolio manager, (ii) a majority of the controlling class or (iii) a majority of the subordinated notes may petition a court of competent jurisidction for the appointment of a replacement portfolio manager, which appointment shall not require the consent of, or be subject to the disapproval of, the issuer or any noteholder so long as such replacement portfolio manager (x) is not a person that was previously objected to and (y) meets the criteria set forth in Section 13(f). The resigned or removed manager will be entitled to receive any base management fees, subordinated management fees and incentive management fees accrued and unpaid as of the effective date of such resignation or removal on each payment date that the fees are paid in accordance to the priority of payments, pro rata with the fees payable to the successor portfolio manager." 
-		]
-	}
-];
- 
- var mapObj = {
-	 glossary: ["Aggregate Principal Balance (APB)", "Document Provision", "New Data", "Aggregate Ramp-Up Par Amount (ARUPA)"],
-	 chart: {
-		 names: ["Collateral Manager", "Target Portfolio Amount ($ Mil.)", "Closing Date", "Reinvestment (Years)", "Non-Call (Years)", "Maturity Date" ],
-		 calcs: [0, 1, 0, 1, 1, 0]
-	 },
-	 priority: "",
-	 replacements: ["Termination for Cause", "Cause", "Waiver Provisions", "Key Person clause", "Relacement Process and Compensation"]
-};
-
-
 /*
  AngularJS v1.2.5
  (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -992,15 +793,27 @@ e.isDefined(c)&&(a.$template=c);return f.all(a)}}).then(function(c){d==r.current
 p=a=p}p&&(b=h(f,{params:e.extend({},c.search(),a),pathParams:a}),b.$$route=f)});return b||k[null]&&h(k[null],{params:{},pathParams:{}})}function u(a,c){var b=[];e.forEach((a||"").split(":"),function(a,d){if(0===d)b.push(a);else{var e=a.match(/(\w+)(.*)/),f=e[1];b.push(c[f]);b.push(e[2]||"");delete c[f]}});return b.join("")}var x=!1,r={routes:k,reload:function(){x=!0;a.$evalAsync(g)}};a.$on("$locationChangeSuccess",g);return r}]});h.provider("$routeParams",function(){this.$get=function(){return{}}});
 h.directive("ngView",u);h.directive("ngView",z);u.$inject=["$route","$anchorScroll","$animate"];z.$inject=["$compile","$controller","$route"]})(window,window.angular);
 //# sourceMappingURL=angular-route.min.js.map
+/*
+ AngularJS v1.2.5
+ (c) 2010-2014 Google, Inc. http://angularjs.org
+ License: MIT
+*/
+(function(H,a,z){'use strict';function C(q,l){l=l||{};a.forEach(l,function(a,h){delete l[h]});for(var h in q)q.hasOwnProperty(h)&&"$$"!==h.substr(0,2)&&(l[h]=q[h]);return l}var v=a.$$minErr("$resource"),B=/^(\.[a-zA-Z_$][0-9a-zA-Z_$]*)+$/;a.module("ngResource",["ng"]).factory("$resource",["$http","$q",function(q,l){function h(a,k){this.template=a;this.defaults=k||{};this.urlParams={}}function t(m,k,n){function E(c,d){var e={};d=w({},k,d);s(d,function(b,d){u(b)&&(b=b());var g;if(b&&b.charAt&&"@"==
+b.charAt(0)){g=c;var a=b.substr(1);if(null==a||""===a||"hasOwnProperty"===a||!B.test("."+a))throw v("badmember",a);for(var a=a.split("."),f=0,k=a.length;f<k&&g!==z;f++){var h=a[f];g=null!==g?g[h]:z}}else g=b;e[d]=g});return e}function e(a){return a.resource}function f(a){C(a||{},this)}var F=new h(m);n=w({},A,n);s(n,function(c,d){var k=/^(POST|PUT|PATCH)$/i.test(c.method);f[d]=function(b,d,g,h){var r={},m,n,x;switch(arguments.length){case 4:x=h,n=g;case 3:case 2:if(u(d)){if(u(b)){n=b;x=d;break}n=d;
+x=g}else{r=b;m=d;n=g;break}case 1:u(b)?n=b:k?m=b:r=b;break;case 0:break;default:throw v("badargs",arguments.length);}var t=this instanceof f,p=t?m:c.isArray?[]:new f(m),y={},A=c.interceptor&&c.interceptor.response||e,B=c.interceptor&&c.interceptor.responseError||z;s(c,function(a,b){"params"!=b&&("isArray"!=b&&"interceptor"!=b)&&(y[b]=G(a))});k&&(y.data=m);F.setUrlParams(y,w({},E(m,c.params||{}),r),c.url);r=q(y).then(function(b){var d=b.data,g=p.$promise;if(d){if(a.isArray(d)!==!!c.isArray)throw v("badcfg",
+c.isArray?"array":"object",a.isArray(d)?"array":"object");c.isArray?(p.length=0,s(d,function(b){p.push(new f(b))})):(C(d,p),p.$promise=g)}p.$resolved=!0;b.resource=p;return b},function(b){p.$resolved=!0;(x||D)(b);return l.reject(b)});r=r.then(function(b){var a=A(b);(n||D)(a,b.headers);return a},B);return t?r:(p.$promise=r,p.$resolved=!1,p)};f.prototype["$"+d]=function(b,a,g){u(b)&&(g=a,a=b,b={});b=f[d].call(this,b,this,a,g);return b.$promise||b}});f.bind=function(a){return t(m,w({},k,a),n)};return f}
+var A={get:{method:"GET"},save:{method:"POST"},query:{method:"GET",isArray:!0},remove:{method:"DELETE"},"delete":{method:"DELETE"}},D=a.noop,s=a.forEach,w=a.extend,G=a.copy,u=a.isFunction;h.prototype={setUrlParams:function(m,k,h){var l=this,e=h||l.template,f,q,c=l.urlParams={};s(e.split(/\W/),function(a){if("hasOwnProperty"===a)throw v("badname");!/^\d+$/.test(a)&&(a&&RegExp("(^|[^\\\\]):"+a+"(\\W|$)").test(e))&&(c[a]=!0)});e=e.replace(/\\:/g,":");k=k||{};s(l.urlParams,function(d,c){f=k.hasOwnProperty(c)?
+k[c]:l.defaults[c];a.isDefined(f)&&null!==f?(q=encodeURIComponent(f).replace(/%40/gi,"@").replace(/%3A/gi,":").replace(/%24/g,"$").replace(/%2C/gi,",").replace(/%20/g,"%20").replace(/%26/gi,"&").replace(/%3D/gi,"=").replace(/%2B/gi,"+"),e=e.replace(RegExp(":"+c+"(\\W|$)","g"),q+"$1")):e=e.replace(RegExp("(/?):"+c+"(\\W|$)","g"),function(a,d,c){return"/"==c.charAt(0)?c:d+c})});e=e.replace(/\/+$/,"");e=e.replace(/\/\.(?=\w+($|\?))/,".");m.url=e.replace(/\/\\\./,"/.");s(k,function(a,c){l.urlParams[c]||
+(m.params=m.params||{},m.params[c]=a)})}};return t}])})(window,window.angular);
+//# sourceMappingURL=angular-resource.min.js.map
 var controllers = {
-	dealsListController: function($scope, $location, filterFilter, sharedService) {
+	dealsListController: function($scope, $http, $location, filterFilter, sharedService, responseData) {
 		$scope.sharedData = sharedService.sharedObject;
 		
 		//add variables to local scope for editing
 		$scope.predicate = $scope.sharedData.defaultPredicate;
-		$scope.deals     = $scope.sharedData.deals;
-		$scope.selection = $scope.sharedData.selection.group; 
-		
+		$scope.selection = $scope.sharedData.selection.group;
+		$scope.deals     = responseData.deals;
 		
 		//add "selected" node to each entity data object
 		if($scope.deals.length && !$scope.selection.length && !$scope.deals[0].selected){
@@ -1032,114 +845,91 @@ var controllers = {
 				$location.path( sharedService.sharedObject.comparison.dflt );
 			}
 		};
-	},
+	}, //end dealsListController
 	
 	
-	compareController: function($scope, $q, $location, sharedService, compare) {
+	compareController: function($scope, $q, $http, $location, sharedService, responseData) {
 		$scope.sharedData = sharedService.sharedObject;
 		
 		if(!$scope.sharedData.selection.group.length){
 			$location.path( "/list" );
 		}
 		
-		//move selected entity objects into local array for faster iteration
-		$scope.selectedDeals = [];
-		angular.forEach($scope.sharedData.deals, function(entValue, entKey){
-			angular.forEach($scope.sharedData.selection.group, function(selValue, selKey){
-				if(selValue.id === entValue.id){
-					$scope.selectedDeals.push(entValue);
-				}
-			});
-		});
-		
-		//iterate over entity objects to create displayData expected by view
-		$scope.displayData = [];
+		$scope.displayData  = [];
+		$scope.responseData = responseData;
 		
 		//If the dataMap for a section does not have labels 
-		if(!$scope.sharedData.dataMap[compare].length){
+		if(!$scope.responseData.map){
 			var longest = 0;
-			angular.forEach($scope.selectedDeals, function(value, key){
-				longest = ( value[compare].length > longest ) ? value[compare].length : longest;
+			angular.forEach($scope.responseData.deals, function(value, key){
+				longest = ( value.compareData.length > longest ) ? value.compareData.length : longest;
 			});
 			for(var i = 0; i < longest; i++ ){
 				var row = { cols:[] };
-				angular.forEach($scope.selectedDeals, function(dealValue, dealKey){
-					row.cols.push(dealValue[compare][i]);
+				angular.forEach($scope.responseData.deals, function(dealValue, dealKey){
+					row.cols.push(dealValue.compareData[i]);
 				});
 				$scope.displayData.push(row);
 			}
 			
 		//otherwise use dataMap to set labels and iterate and set column data
 		} else {
-			angular.forEach($scope.sharedData.dataMap[compare], function(mapValue, mapKey){
-				var row = { name: $scope.sharedData.dataMap[compare][mapKey], cols: [] };
-				angular.forEach($scope.selectedDeals, function(dealValue, dealKey){
-					row.cols.push(dealValue[compare][mapKey]);
+			angular.forEach($scope.responseData.map, function(mapValue, mapKey){
+				var row = { name: $scope.responseData.map[mapKey], cols: [] };
+				angular.forEach($scope.responseData.deals, function(dealValue, dealKey){
+					row.cols.push(dealValue.compareData[mapKey]);
 				});
 				$scope.displayData.push(row);
 			});
 		}
-	},
-	
-	
-	compareChartController: function($scope, $location, sharedService) {
-		$scope.sharedData = sharedService.sharedObject;
 		
-		if(!$scope.sharedData.selection.group.length){
-			$location.path( "/list" );
-		}
+		//returns boolean value based on current route path for class toggle
+		$scope.isActive = function (viewLocation) {
+			var active = (viewLocation === $location.path());
+			return active;
+		};
 		
-		//move selected entity objects into local array for faster iteration
-		$scope.selectedDeals = [];
-		angular.forEach($scope.sharedData.deals, function(dealValue, dealKey){
-			angular.forEach($scope.sharedData.selection.group, function(selValue, selKey){
-				if(selValue.id === dealValue.id){
-					$scope.selectedDeals.push(dealValue);
-				}
-			});
-		});
-		
-		//iterate through selected entities and map to page glossary
-		$scope.displayData = [];
-		angular.forEach($scope.sharedData.dataMap.chart.names, function(mapValue, mapKey){
-			var row = { name: $scope.sharedData.dataMap.chart.names[mapKey], cols: [] }
-			angular.forEach($scope.selectedDeals, function(dealValue, dealKey){
-				row.cols.push(dealValue.chart[mapKey]);
-			});
-			$scope.displayData.push(row);
-		});
-		
-		//calculate data if necessary
-		$scope.calcData = { titles: ["Average", "Min", "Max"] };
-		
-		angular.forEach($scope.sharedData.dataMap.chart.calcs, function(mapValue, mapKey){
-			if(!mapValue){
-				tempArray = [0, 0, 0];
-			} else {
-				var average = 0, min = 0, max = 0,
-					temp = 0, tempArray = [], 
-					colLength = $scope.displayData[mapKey].cols.length;
-				
-				//Calculation for Average
-				for (var i = 0; i < colLength; i++) {
-					average += parseFloat($scope.displayData[mapKey].cols[i]) / colLength || 0;
-				}
-				tempArray.push(parseFloat(average).toFixed(2));
-				
-				//Calculation for Min
-				tempArray.push(parseFloat(average * .9123).toFixed(2) || 0);
-				
-				//Calculation for Max
-				tempArray.push(parseFloat(average * 1.175).toFixed(2) || 0);
-			}
-			angular.forEach(tempArray, function(value,key){
-				$scope.displayData[mapKey].cols.push(value);
-			});
-		});
-	}
+	} //end compareController
 }
 
-var cloApp = angular.module( 'cloApp', ['ngRoute'] );
+//Module for Data Services
+var cloData = angular.module('cloDataServices', []);
+
+cloData.factory( 'cloDealServices', function ( $http ){
+	var cloDealServices = {
+		getAllDeals: function(){
+			var promise =  $http.get("http://jeferico.com/demo/fitch/min/ng/data/getDealsList.php")
+				.then(function(response) { 
+					return response.data; 
+				}
+			);
+			return promise;
+		},
+		getDealInfo: function( compare, dealsObjectList ){
+			var promise = $http(
+				{ 
+					url: "http://jeferico.com/demo/fitch/min/ng/data/getDealInfo.php",
+					method: "GET",
+					params: { 
+						compare: compare, 
+						deals: dealsObjectList.map( function( deal ){
+							return deal.id; 
+						}).join(",")
+					}
+				})
+				.then(function(response) {
+					return response.data;
+				}
+			);
+			return promise;
+		}
+	};
+	
+	return cloDealServices;
+});
+
+//Main Application
+var cloApp = angular.module( 'cloApp', ['ngRoute', 'cloDataServices'] );
 
 cloApp.factory("sharedService", function(){
 	return { sharedObject: { 
@@ -1148,44 +938,82 @@ cloApp.factory("sharedService", function(){
 			min:2,
 			max:5
 		},
-		deals: dealsObj,
-		dataMap: mapObj,
+		deals: {},
+		dataMap: {},
 		defaultPredicate: "name",
-		comparison: { dflt: "/compare_chart" }
+		comparison: { dflt: "/compare/chart" }
 	}}
 });
 
-cloApp.config( function( $routeProvider ){
+cloApp.factory('httpInterceptor', function ($q, $rootScope, $log) {
+	var numLoadings = 0;
+	return {
+		request: function (config) {
+			numLoadings++;
+			
+			// Show loader
+			$rootScope.$broadcast("loader_show");
+			return config || $q.when(config)
+		},
+		
+		response: function (response) {
+			if ((--numLoadings) === 0) {
+				// Hide loader
+				$rootScope.$broadcast("loader_hide");
+			}
+			return response || $q.when(response);
+		},
+		
+		responseError: function (response) {
+			if (!(--numLoadings)) {
+				// Hide loader
+				$rootScope.$broadcast("loader_hide");
+			}
+			
+			return $q.reject(response);
+		}
+	};
+});
+
+cloApp.config( function( $routeProvider, $httpProvider, sharedService ){
+	$httpProvider.interceptors.push('httpInterceptor');
+	
 	$routeProvider
 	.when('/list',
-			{
-				controller: 'dealsListController',
-				templateUrl: 'tmpl/partials/dealsListView.html'
-			})
-	.when('/compare_glossary',
-			{
-				controller: 'compareController',
-				templateUrl: 'tmpl/partials/compareView.html',
-				resolve: { compare: function(){ return "glossary"; } }	
-			})
-	.when('/compare_priority',
-			{
-				controller: 'compareController',
-				templateUrl: 'tmpl/partials/compareBasicView.html',
-				resolve: { compare: function(){ return "priority"; } }
-			})
-	.when('/compare_replacements',
-			{
-				controller: 'compareController',
-				templateUrl: 'tmpl/partials/compareView.html',
-				resolve: { compare: function(){ return "replacements"; } }
-			})
-	.when('/compare_chart',
-			{
-				controller: 'compareChartController',
-				templateUrl: 'tmpl/partials/compareView.html',
-			})
+		{
+			controller: 'dealsListController',
+			templateUrl: 'tmpl/partials/dealsListView.html', 
+			resolve: { 
+				responseData: function( cloDealServices ){
+					return cloDealServices.getAllDeals();
+				}
+			}
+		})
+	.when('/compare/:comparetype',
+		{
+			controller: 'compareController',
+			templateUrl: 'tmpl/partials/compareView.html',
+			resolve: {
+				responseData: function(cloDealServices, sharedService, $route){
+					return cloDealServices.getDealInfo( 
+						$route.current.params.comparetype, 
+						sharedService.sharedObject.selection.group
+					);
+				}
+			}	
+		})
 	.otherwise({redirectTo: '/list'});
+});
+
+cloApp.directive("loader", function ($rootScope) {
+	return function ($scope, element, attrs) {
+		$scope.$on("loader_show", function () {
+			return element.css("display", "block");
+		});
+		return $scope.$on("loader_hide", function () {
+			return element.css("display", "none");
+		});
+	};
 });
 
 cloApp.controller( controllers );

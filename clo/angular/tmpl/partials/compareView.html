@@ -1,5 +1,5 @@
 <div class="subnav m-vert-default">
-	<uL class="ovflw-auto p-reset">
+	<uL class="ovflw-auto p-reset" data-nav-tabs="">
 		<li>
 			<a 
 				rel="nav-link"
@@ -13,7 +13,8 @@
 			<a
 				rel="nav-link"
 				class="fl-left"
-				href="#/compare_chart"
+				href="#/compare/chart"
+				data-ng-class="{active: isActive('/compare/chart')}"
 			>
 				Chart
 			</a>
@@ -22,7 +23,8 @@
 			<a 
 				rel="nav-link"
 				class="fl-left"
-				href="#/compare_replacements"
+				href="#/compare/replacements"
+				data-ng-class="{active: isActive('/compare/replacements')}"
 			>
 				Replacements
 			</a>
@@ -31,7 +33,8 @@
 			<a
 				rel="nav-link"
 				class="fl-left"
-				href="#/compare_priority"
+				href="#/compare/priority"
+				data-ng-class="{active: isActive('/compare/priority')}"
 			>
 				Priority
 			</a>
@@ -40,7 +43,8 @@
 			<a
 				rel="nav-link"
 				class="fl-left"
-				href="#/compare_glossary"
+				href="#/compare/glossary"
+				data-ng-class="{active: isActive('/compare/glossary')}"
 			>
 				Glossary
 			</a>
@@ -51,10 +55,10 @@
 <table class="grid-1 table-static">
 	<thead>
 		<tr>
-			<th>
+			<th data-ng-show="responseData.map">
 				Deal
 			</th>
-			<th data-ng-repeat="deal in selectedDeals">
+			<th data-ng-repeat="deal in sharedData.selection.group">
 				{{deal.name}}
 			</th>
 			<th data-ng-repeat="calcs in calcData.titles">
@@ -68,7 +72,7 @@
 			ng-class-odd="'odd'"
 			ng-class-even="'even'"
 		>
-			<td>
+			<td data-ng-show="responseData.map">
 				{{data.name}}
 			</td>
 			<td data-ng-repeat="colData in data.cols track by $index">
@@ -78,15 +82,15 @@
 	</tbody>
 </table> 
 
-<!-- DEBUG - compareView.html
+<!-- DEBUG - compareView.html 
 	<div class="debug">
 		<div>
 			<h3>[$scope.displayData]</h3>
 			<pre>{{displayData|json}}</pre>
 		</div>
 		<div>
-			<h3>[$scope.calcData]</h3>
-			<pre>{{calcData|json}}</pre>
+			<h3>[$scope.responseData]</h3>
+			<pre>{{responseData|json}}</pre>
 		</div>
 	</div>
 <!-- /DEBUG - compareView.html -->

@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			dist: {
-				src: ['js/lib/ie8/json2.js', 'js/lib/ie8/prototypes.js', 'data/dealsObj.js', 'js/lib/angular.min.js', 'js/lib/angular.route.min.js', 'js/partials/controllers/controllers.js', 'js/partials/apps/cloApp.js' ],
+				src: ['js/lib/ie8/json2.js', 'js/lib/ie8/prototypes.js', 'data/dealsObj.js', 'js/lib/angular.min.js', 'js/lib/angular.route.min.js', 'js/lib/angular.resource.min.js', 'js/partials/controllers/controllers.js', 'js/partials/apps/cloApp.js' ],
 				dest: 'js/prod/built.js'
 			}
 		},

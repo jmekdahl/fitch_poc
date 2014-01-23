@@ -6,26 +6,29 @@
 	data-ng-switch="( deals | filter:filter.name ).length"
 >
 	<div class="grid-2-3">
-	<h3 class="title-sml fl-left m-vert-default">Available Deals</h3>
+		<h3 class="title-sml fl-left m-vert-default">
+			Available Deals
+		</h3>
 	</div>
 	<div class="grid-1-3">
-	<input
-		id="txtFilter"
-		class="fl-right txt-search m-vert-default"
-		type="text" data-ng-model="filter.name"
-		data-ng-focus="filter.name = ''"
-		placeholder="Filter Deals" 
-	/>
+		<input
+			id="txtFilter"
+			class="fl-right txt-search m-vert-default"
+			type="text" data-ng-model="filter.name"
+			data-ng-focus="filter.name = ''"
+			placeholder="Filter Deals" 
+		/>
 	</div>
 	<p data-ng-switch-when="0" class="alt-tooltip">
 		No deals matching <span class="searchQuery">"{{filter.name}}"</span>.
 	</p>
+	<div class="grid-1">
 	<table class="table-sortable" data-ng-switch-default="">
 		<colgroup>
 			<col style="width: 40px;">
 			<col style="width: auto;">
-			<col style="width: 150px">
-			<col style="width: 150px">
+			<col style="width: 163px">
+			<col style="width: 163px">
 		</colgroup>
 		<thead>
 			<tr>
@@ -82,6 +85,7 @@
 			</tr>
 		</tbody>
 	</table>
+	</div>
 </div>
 <p data-ng-hide="deals.length">There was a problem loading deal data.</p>
 
