@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" data-ng-app="cloApp">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=8">
+		<meta charset="utf-8">
+		
+		<title>CLO App POC</title>
+		 <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+   		 <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+		<!--[if lte IE 8]>
+			<script>
+				document.createElement('ng-include');
+				document.createElement('ng-pluralize');
+				document.createElement('ng-view');
+ 			</script>
+		<![endif]-->
+	</head>
+	<body ng-controller="cloAppCtrl">
+		<div class="content">
+			<div data-ng-include="'header.tpl.html'"></div>
+			<div data-ng-include="'loader/loader.tpl.html'"></div>
+			<div class="view" data-ng-view=""></div>
+		</div>
+		<!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    	<script type="text/javascript" src="<%= file %>"></script><% }); %>
+	</body>
+</html>
