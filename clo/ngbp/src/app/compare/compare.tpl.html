@@ -1,50 +1,47 @@
+<h1>Compare View Title</h1>
 <div class="subnav m-vert-default">
-	<uL class="ovflw-auto p-reset" data-nav-tabs="">
+	<uL class="nav nav-pills">
 		<li>
 			<a 
 				rel="nav-link"
 				class="fl-left"
 				href="#/list"
 			>
-				Back
+				Reset
 			</a>
 		</li>
-		<li>
+		<li data-ng-class="{active: isActive('/compare/chart')}">
 			<a
 				rel="nav-link"
 				class="fl-left"
 				href="#/compare/chart"
-				data-ng-class="{active: isActive('/compare/chart')}"
 			>
 				Chart
 			</a>
 		</li>
-		<li>
+		<li data-ng-class="{active: isActive('/compare/replacements')}">
 			<a 
 				rel="nav-link"
 				class="fl-left"
 				href="#/compare/replacements"
-				data-ng-class="{active: isActive('/compare/replacements')}"
 			>
 				Replacements
 			</a>
 		</li>
-		<li>
+		<li data-ng-class="{active: isActive('/compare/priority')}">
 			<a
 				rel="nav-link"
 				class="fl-left"
 				href="#/compare/priority"
-				data-ng-class="{active: isActive('/compare/priority')}"
 			>
 				Priority
 			</a>
 		</li>
-		<li>
+		<li data-ng-class="{active: isActive('/compare/glossary')}">
 			<a
 				rel="nav-link"
 				class="fl-left"
 				href="#/compare/glossary"
-				data-ng-class="{active: isActive('/compare/glossary')}"
 			>
 				Glossary
 			</a>
@@ -52,7 +49,7 @@
 	</uL>
 </div>
 
-<table class="grid-1 table-static">
+<table class="grid-1 table-static table table-striped table-bordered table-condensed table-hover">
 	<thead>
 		<tr>
 			<th data-ng-show="responseData.map">
@@ -69,8 +66,6 @@
 	<tbody>
 		<tr 
 			data-ng-repeat="data in displayData"
-			ng-class-odd="'odd'"
-			ng-class-even="'even'"
 		>
 			<td data-ng-show="responseData.map">
 				{{data.name}}

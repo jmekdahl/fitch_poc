@@ -1,1 +1,143 @@
-<h1>{{responseData}}</h1>
+<h1>List View Title</h1>
+<div
+	class="content-section"
+	data-ng-show="deals"
+	data-ng-switch="( deals | filter:filter.name ).length"
+>
+	<div class="col-md-8">
+		<h3 class="title-sml fl-left m-vert-default">
+			Available Deals
+		</h3>
+		<div class="input-group  txt-search">
+			<span class="input-group-addon">Filter</span>
+			<input 
+				type="text" 
+				class="form-control"
+				data-ng-model="filter.name"
+				data-ng-focus="filter.name=''"
+				placeholder="Deal Name, Date"
+			>
+		</div>
+		<p data-ng-switch-when="0" class="alt-tooltip">
+			No deals matching <span class="searchQuery">"{{filter.name}}"</span>.
+		</p>
+		<table class="table-sortable table table-striped table-hover" data-ng-switch-default="">
+			<colgroup>
+				<col style="width: 40px;">
+				<col style="width: auto;">
+				<col style="width: 163px">
+				<col style="width: 163px">
+			</colgroup>
+			<thead>
+				<tr>
+					<th colspan="2" data-ng-click="predicate='name'; reverse=!reverse">
+						Name
+						<span 
+							class="fl-right"
+							data-ng-class="{sort: predicate === 'name', ascending: reverse}"
+						></span>
+					</th>
+					<th data-ng-click="predicate='issued'; reverse=!reverse">
+						Issued Date
+						<span 
+							class="fl-right"
+							data-ng-class="{sort: predicate === 'issued', ascending: reverse}"
+						></span>
+					</th>
+					<th data-ng-click="predicate='published'; reverse=!reverse">
+						Published Date
+						<span 
+							class="fl-right"
+							data-ng-class="{sort: predicate === 'published', ascending: reverse}"
+						></span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr 
+					data-ng-repeat="deal in deals | filter:filter.name | orderBy:predicate:reverse"
+					data-ng-class-odd="'odd'"
+					data-ng-class-even="'even'"
+					data-ng-class="{success: deal.selected, danger: ( deal.selected && selection.length > sharedData.selection.max ) }"
+					data-ng-click="deal.selected = !deal.selected"
+				>
+					<td>
+						<input 
+							type="checkbox"
+							name="selectedDeals"
+							id="{{deal.id}}"
+							value="{{deal.id}}"
+							data-ng-model="deal.selected"
+						/> 
+					</td>
+					<td>
+						<label for="{{deal.id}}">
+							{{deal.name}}
+						</label>
+					</td>
+					<td>
+						{{deal.issued}}
+					</td>
+					<td>
+						{{deal.published}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="content-section col-md-4">
+		<h3 class="title-labeled title-sml">
+			Selected Deals
+			<span 
+				class="label label-default"
+				data-ng-class="{'label-danger': selection.length > sharedData.selection.max, 'label-primary': ( selection.length <= sharedData.selection.max && selection.length >= sharedData.selection.min ) }"
+			>
+				{{selection.length}}
+			</span>
+		</h3>
+		<div data-ng-switch="selection.length">
+			<p data-ng-switch-when="0" class="alt-tooltip">
+				No deals selected.
+			</p>
+			<div data-ng-switch-default="">
+				<div class="selection list-group">
+					<div
+						class="selected-item list-group-item" 
+						data-ng-repeat="deal in selection"
+						data-ng-class-odd="'odd'"
+						data-ng-class-even="'even'"
+						data-ng-click="unselect(deal.id);"
+					>
+								{{deal.name}}
+
+					</div>
+				</div>
+				<div class="grid-1-3">
+					<button 
+						class="btn btn-default m-vert-default"
+						type="button"
+						data-ng-click="setSelection()"
+						data-ng-class="{'btn-primary': ( selection.length <= sharedData.selection.max && selection.length >= sharedData.selection.min ) }"
+					/>
+						Compare Deals
+					</button>
+					<h3></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p data-ng-hide="deals.length">There was a problem loading deal data.</p>
+<!-- DEBUG - entityListView.html 
+	<div class="debug col-md-12">
+		<div>
+			<h3>[$scope.selection]</h3>
+			<pre>{{selection|json}}</pre>
+		</div>
+		<div>
+			<h3>[$scope.sharedData.deals][sharedService.sharedObj.deals]</h3>
+			<pre>{{deals|json}}</pre>
+		</div>
+	</div>
+<!-- /DEBUG - entityListView.html -->
