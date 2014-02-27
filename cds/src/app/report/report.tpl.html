@@ -1,0 +1,89 @@
+<h1>Reporting</h1>
+<div class="subnav m-vert-default">
+	<uL class="nav nav-pills">
+		<li data-ng-class="{active: isActive('/report/stats')}">
+			<a rel="nav-link" href="#/report/stats">
+				Stats
+			</a>
+		</li>
+		<li data-ng-class="{active: isActive('/report/stale')}">
+			<a rel="nav-link" href="#/report/stale">
+				Stale
+			</a>
+		</li>
+		<li data-ng-class="{active: isActive('/report/outlier')}">
+			<a rel="nav-link" href="#/report/outlier">
+				Outlier
+			</a>
+		</li>
+		<li data-ng-class="{active: isActive('/report/flat')}">
+			<a rel="nav-link" href="#/report/flat">
+				Flat
+			</a>
+		</li>
+		<!--  -->
+	</uL>
+</div>
+<div class="report-wrapper">
+	<div class="input-group  txt-search">
+		<span class="input-group-addon">Filter</span>
+		<input 
+			type="text" 
+			class="form-control"
+			data-ng-model="filter.basic"
+			data-ng-focus="filter.basic=''"
+			placeholder="Basic Search Filter"
+		>
+		<span class="input-group-btn">
+        	<button class="btn btn-primary" type="button" data-ng-click="updateFilter()">Apply</button>
+      	</span>
+	</div>
+	<table class="table-sortable table table-striped table-hover">
+		<colgroup>
+			<!-- Todo: add fixed width to columns by report type -->
+		</colgroup>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th data-ng-repeat="title in displayTitles">
+					{{title.displayTitle}}
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr 
+				data-ng-repeat="curve in displayData | orderBy:predicate:reverse"
+				data-ng-class-odd="'odd'"
+				data-ng-class-even="'even'"
+				data-ng-class="{info: curve.selected}"
+				data-ng-click="curve.selected = !curve.selected"
+			>
+				<td>{{$index + 1}}.</td>
+				<td data-ng-repeat="datapoint in curve">
+					{{datapoint}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<button 
+		class="btn btn-info"
+        ng-csv="csvExport.data"
+        filename="{{csvExport.filename}}"
+        text-delimiter="&quot;"
+    >
+     	Export to CSV
+
+     </button>
+	<ul class="pagination pull-right">
+  		<li><a href="javascript:void(0);" data-ng-click="pagination.previous()">&laquo; Prev</a></li>
+  		<li><a href="javascript:void(0);" data-ng-click="pagination.setPage(1)">1</a></li>
+		<li><a href="javascript:void(0);" data-ng-click="pagination.setPage(2)">2</a></li>
+	  	<li><a href="javascript:void(0);" data-ng-click="pagination.setPage(3)">3</a></li>
+	  	<li><a href="javascript:void(0);" data-ng-click="pagination.setPage(4)">4</a></li>
+	  	<li><a href="javascript:void(0);" data-ng-click="pagination.setPage(5)">5</a></li>
+	  	<li><a href="javascript:void(0);" data-ng-click="pagination.next()">Next &raquo;</a></li>
+	</ul>
+</div>
+<pre>{{pagination}}</pre>
+<pre>{{responseRaw|json}}</pre>

@@ -3,7 +3,7 @@ angular.module('cloDataServices', [])
 .factory( 'cloDealServices', function ( $http ){
 	var cloDealServices = {
 		getAllDeals: function(){
-			var promise =  $http.get("http://jeferico.com/demo/fitch/min/ng/data/getDealsList.php")
+			var promise =  $http.get("http://demo.jeferico.com/fitch/min/ng/data/getDealsList.php")
 				.then(function(response) { 
 					return response.data; 
 				}
@@ -13,7 +13,7 @@ angular.module('cloDataServices', [])
 		getDealInfo: function( compare, dealsObjectList ){
 			var promise = $http(
 				{ 
-					url: "http://jeferico.com/demo/fitch/min/ng/data/getDealInfo.php",
+					url: "http://demo.jeferico.com/fitch/min/ng/data/getDealInfo.php",
 					method: "GET",
 					params: { 
 						compare: compare, 
